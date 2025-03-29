@@ -1,35 +1,145 @@
-[gd_scene load_steps=12 format=3 uid="uid://comsboykqjwfr"]
+[gd_scene load_steps=11 format=3 uid="uid://comsboykqjwfr"]
 
 [ext_resource type="Script" uid="uid://c7lovmtr7tt83" path="res://scripts/ui/prolog.gd" id="1_rku0p"]
 [ext_resource type="Texture2D" uid="uid://lvmyvf5i285b" path="res://assets/textures/scenes/scene1/scene1_tex_1.png" id="1_vwnfm"]
 [ext_resource type="Script" uid="uid://bgfr5sflr216j" path="res://scripts/ui/parallax_background.gd" id="1_x0bj8"]
 [ext_resource type="Texture2D" uid="uid://h3bb8scm0jup" path="res://assets/textures/scenes/scene1/scene1_tex_2.png" id="2_bf8ha"]
 [ext_resource type="PackedScene" uid="uid://6hnu6o3q3awa" path="res://scenes/scenes/game.tscn" id="2_qn4db"]
-[ext_resource type="Script" uid="uid://dvts0pvw5cpyx" path="res://scripts/logic/story_frame.gd" id="2_upguw"]
 [ext_resource type="Theme" uid="uid://c5o2cxeytas3f" path="res://assets/thems/default.tres" id="2_x0bj8"]
 [ext_resource type="Texture2D" uid="uid://dsftoe0gabfxb" path="res://assets/textures/scenes/scene1/scene1_tex_3.png" id="3_x0bj8"]
 
-[sub_resource type="Resource" id="Resource_wq7ad"]
-script = ExtResource("2_upguw")
-nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel"), NodePath("ParallaxBackground/ParallaxLayer/Scene1Tex1")])
-metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
+[sub_resource type="Animation" id="Animation_qn4db"]
+resource_name = "prolog"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer3/Scene1Tex3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer2/Scene1Tex2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer/Scene1Tex1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Control/RichTextLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Control/RichTextLabel2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Control/RichTextLabel3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="Resource" id="Resource_47fwh"]
-script = ExtResource("2_upguw")
-nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel2"), NodePath("ParallaxBackground/ParallaxLayer2/Scene1Tex2")])
-metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
+[sub_resource type="Animation" id="Animation_upguw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer3/Scene1Tex3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer2/Scene1Tex2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer/Scene1Tex1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="Resource" id="Resource_wi0fj"]
-script = ExtResource("2_upguw")
-nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel3"), NodePath("ParallaxBackground/ParallaxLayer3/Scene1Tex3")])
-metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wq7ad"]
+_data = {
+&"RESET": SubResource("Animation_upguw"),
+&"prolog": SubResource("Animation_qn4db")
+}
 
 [node name="prolog" type="Node2D"]
 script = ExtResource("1_rku0p")
-frames = Array[ExtResource("2_upguw")]([SubResource("Resource_wq7ad"), SubResource("Resource_47fwh"), SubResource("Resource_wi0fj")])
-fade_duration = 0.5
-display_duration = 6.0
+scene_nodes = Array[NodePath]([NodePath("ParallaxBackground/ParallaxLayer3/Scene1Tex3"), NodePath("ParallaxBackground/ParallaxLayer2/Scene1Tex2"), NodePath("ParallaxBackground/ParallaxLayer/Scene1Tex1"), NodePath("")])
+fade_duration = null
+display_duration = null
 next_scene = ExtResource("2_qn4db")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wq7ad")
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -109,7 +219,6 @@ sensitivity = 0.02
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Scene1Tex3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-visible = false
 position = Vector2(716.764, 488.571)
 texture = ExtResource("3_x0bj8")
 

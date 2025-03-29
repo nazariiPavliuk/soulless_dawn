@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://yaf6ax3ajedf"]
+[gd_scene load_steps=27 format=3 uid="uid://yaf6ax3ajedf"]
 
 [ext_resource type="Texture2D" uid="uid://cjn65tx86txtv" path="res://assets/textures/ui/mainScene/mainSceneBackground.png" id="1_gxlkk"]
 [ext_resource type="Texture2D" uid="uid://bn46ynoqd7u1q" path="res://assets/textures/ui/common/button3.png" id="2_4lfjw"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b5akmi0wojpni" path="res://assets/textures/ui/mainScene/bulb.png" id="7_1vorq"]
 [ext_resource type="Texture2D" uid="uid://mywomsx5xl2h" path="res://assets/textures/ui/mainScene/bulb_foreground.png" id="8_6x32m"]
 [ext_resource type="Texture2D" uid="uid://bqc8rya5e8jtg" path="res://assets/textures/ui/mainScene/shoes.png" id="9_8vx8i"]
+[ext_resource type="Script" uid="uid://3mmmxbgqefnu" path="res://scripts/ui/bulb.gd" id="14_6kluq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3woq"]
 
@@ -185,7 +186,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BulbForeground:visible")
+tracks/0/path = NodePath("Bulb/BulbForeground:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -284,7 +285,7 @@ scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_1f6eh")
 animation = &"mouse_run"
 autoplay = "mouse_run"
-frame_progress = 0.599495
+frame_progress = 0.475143
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(1.05, 1.05)
@@ -314,15 +315,19 @@ libraries = {
 autoplay = "bulb_light"
 
 [node name="Bulb" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
-position = Vector2(925, 67)
+position = Vector2(925, -139.66)
 texture = ExtResource("7_1vorq")
-offset = Vector2(0, -50)
+offset = Vector2(0, 152.584)
+script = ExtResource("14_6kluq")
+amplitude_degrees = 30.0
+frequency = 7.0
+damping = 1.0
+energy_gain = 0.5
 
-[node name="BulbForeground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+[node name="BulbForeground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5/Bulb"]
 visible = false
-position = Vector2(925, 177)
+position = Vector2(0, 262.66)
 texture = ExtResource("8_6x32m")
-offset = Vector2(0, -50)
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(1.2, 1.2)

@@ -7,7 +7,7 @@ func _process(delta: float) -> void:
 	var mouse_pos = get_viewport().get_mouse_position()
 	
 	# Центрируем мышку относительно экрана (-0.5 до 0.5)
-	var offset = (mouse_pos / viewport_size) - Vector2(0.5, 0.5)
+	var offset_ = (mouse_pos / viewport_size) - Vector2(0.5, 0.5)
 	
 	# Применяем чувствительность
-	scroll_offset = offset * sensitivity * viewport_size
+	scroll_offset = offset_ * sensitivity * viewport_size
