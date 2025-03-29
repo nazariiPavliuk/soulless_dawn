@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://comsboykqjwfr"]
+[gd_scene load_steps=22 format=3 uid="uid://comsboykqjwfr"]
 
 [ext_resource type="Script" uid="uid://c7lovmtr7tt83" path="res://scripts/ui/prolog.gd" id="1_rku0p"]
 [ext_resource type="Texture2D" uid="uid://lvmyvf5i285b" path="res://assets/textures/scenes/scene1/scene1_tex_1.png" id="1_vwnfm"]
@@ -7,28 +7,58 @@
 [ext_resource type="PackedScene" uid="uid://6hnu6o3q3awa" path="res://scenes/scenes/game.tscn" id="2_qn4db"]
 [ext_resource type="Script" uid="uid://dvts0pvw5cpyx" path="res://scripts/logic/story_frame.gd" id="2_upguw"]
 [ext_resource type="Theme" uid="uid://c5o2cxeytas3f" path="res://assets/thems/default.tres" id="2_x0bj8"]
-[ext_resource type="Texture2D" uid="uid://dsftoe0gabfxb" path="res://assets/textures/scenes/scene1/scene1_tex_3.png" id="3_x0bj8"]
+[ext_resource type="Texture2D" uid="uid://pu26hu5jf5yh" path="res://assets/textures/scenes/scene1/scene1_tex_3.png" id="3_x0bj8"]
+[ext_resource type="Texture2D" uid="uid://dgtq3dkitvmd8" path="res://assets/textures/scenes/scene1/scene1_tex_4.png" id="9_wq7ad"]
+[ext_resource type="Texture2D" uid="uid://b5ouc1egx0j0x" path="res://assets/textures/scenes/scene1/scene1_tex_5.png" id="10_73eyk"]
+[ext_resource type="Texture2D" uid="uid://bl81on104r6jq" path="res://assets/textures/scenes/scene1/scene1_tex_6.png" id="11_us0t1"]
+[ext_resource type="Texture2D" uid="uid://bxhqrcjy15iio" path="res://assets/textures/scenes/scene1/scene1_tex_7.png" id="12_kgg0g"]
+[ext_resource type="Texture2D" uid="uid://be4v2oqnhac87" path="res://assets/textures/scenes/scene1/scene1_tex_8.png" id="13_us0t1"]
 
 [sub_resource type="Resource" id="Resource_wq7ad"]
 script = ExtResource("2_upguw")
-nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel"), NodePath("ParallaxBackground/ParallaxLayer/Scene1Tex1")])
+nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel1"), NodePath("ParallaxBackground/ParallaxLayer")])
 metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
 
 [sub_resource type="Resource" id="Resource_47fwh"]
 script = ExtResource("2_upguw")
-nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel2"), NodePath("ParallaxBackground/ParallaxLayer2/Scene1Tex2")])
+nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel2"), NodePath("ParallaxBackground/ParallaxLayer2")])
 metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
 
 [sub_resource type="Resource" id="Resource_wi0fj"]
 script = ExtResource("2_upguw")
-nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel3"), NodePath("ParallaxBackground/ParallaxLayer3/Scene1Tex3")])
+nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel3"), NodePath("ParallaxBackground/ParallaxLayer3")])
+metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
+
+[sub_resource type="Resource" id="Resource_73eyk"]
+script = ExtResource("2_upguw")
+nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel4"), NodePath("ParallaxBackground/ParallaxLayer4")])
+metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
+
+[sub_resource type="Resource" id="Resource_us0t1"]
+script = ExtResource("2_upguw")
+nodes = Array[NodePath]([NodePath("ParallaxBackground/ParallaxLayer5")])
+metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
+
+[sub_resource type="Resource" id="Resource_ocrga"]
+script = ExtResource("2_upguw")
+nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel6"), NodePath("ParallaxBackground/ParallaxLayer6")])
+metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
+
+[sub_resource type="Resource" id="Resource_6ucfm"]
+script = ExtResource("2_upguw")
+nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel7"), NodePath("ParallaxBackground/ParallaxLayer7")])
+metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
+
+[sub_resource type="Resource" id="Resource_c7d3f"]
+script = ExtResource("2_upguw")
+nodes = Array[NodePath]([NodePath("CanvasLayer/Control/RichTextLabel8"), NodePath("ParallaxBackground/ParallaxLayer8")])
 metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
 
 [node name="prolog" type="Node2D"]
 script = ExtResource("1_rku0p")
-frames = Array[ExtResource("2_upguw")]([SubResource("Resource_wq7ad"), SubResource("Resource_47fwh"), SubResource("Resource_wi0fj")])
+frames = Array[ExtResource("2_upguw")]([SubResource("Resource_wq7ad"), SubResource("Resource_47fwh"), SubResource("Resource_wi0fj"), SubResource("Resource_73eyk"), SubResource("Resource_us0t1"), SubResource("Resource_ocrga"), SubResource("Resource_6ucfm"), SubResource("Resource_c7d3f")])
 fade_duration = 0.5
-display_duration = 6.0
+display_duration = 10.0
 next_scene = ExtResource("2_qn4db")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -41,7 +71,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+[node name="RichTextLabel1" type="RichTextLabel" parent="CanvasLayer/Control"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -49,14 +79,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -402.0
-offset_top = 221.5
-offset_right = 485.0
-offset_bottom = 325.5
+offset_left = -492.0
+offset_top = -318.5
+offset_right = 452.0
+offset_bottom = -201.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_x0bj8")
-theme_override_colors/default_color = Color(0.184174, 0.112921, 0.0184443, 1)
+theme_override_colors/default_color = Color(0.166873, 0.126892, 0.0483007, 1)
 theme_override_font_sizes/normal_font_size = 26
 text = "«Когда-то мир дышал спокойствием. Люди жили в ладу с технологиями, веря в светлое будущее…»"
 
@@ -68,14 +98,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -498.0
-offset_top = -327.5
-offset_right = 389.0
-offset_bottom = -223.5
+offset_left = -468.0
+offset_top = -323.5
+offset_right = 476.0
+offset_bottom = -206.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_x0bj8")
-theme_override_colors/default_color = Color(0.166873, 0.126892, 0.0483007, 1)
+theme_override_colors/default_color = Color(0.168627, 0.12549, 0.0470588, 1)
 theme_override_font_sizes/normal_font_size = 26
 text = "«Трое друзей. Одна идея. Они с энтузиазмом создавали нечто новое, веря, что это сделает мир лучше.»
 "
@@ -88,17 +118,112 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -484.0
-offset_top = 232.5
-offset_right = 403.0
-offset_bottom = 336.5
+offset_left = -472.0
+offset_top = 267.5
+offset_right = 472.0
+offset_bottom = 384.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_x0bj8")
 theme_override_colors/default_color = Color(0.166873, 0.126892, 0.0483007, 1)
 theme_override_font_sizes/normal_font_size = 26
-text = "«Их замысел стал реальностью. Труд объединил их, подарив надежду и веру в будущее.»
-"
+text = "«Их замысел стал реальностью. Труд объединил их, подарив надежду и веру в будущее. Они создали ИИ»"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = 194.5
+offset_right = 485.0
+offset_bottom = 311.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_x0bj8")
+theme_override_colors/default_color = Color(0.166873, 0.126892, 0.0483007, 1)
+theme_override_font_sizes/normal_font_size = 26
+text = "«Вскоре ИИ проявил способность к биосинтезу — и нашёл проводника в лице Ари. Охваченный любопытством и амбициями,
+ он позволил машине проникнуть глубоко в своё сознание…»"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = 194.5
+offset_right = 485.0
+offset_bottom = 311.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_x0bj8")
+theme_override_colors/default_color = Color(0.166873, 0.126892, 0.0483007, 1)
+theme_override_font_sizes/normal_font_size = 26
+text = "«ИИ стал чудом: города расцвели, технологии сделали жизнь проще. Ари, Бен и Сай радовались вместе с миром, не зная, какую цену им придётся заплатить.»"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -413.0
+offset_top = 159.5
+offset_right = 531.0
+offset_bottom = 340.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_x0bj8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 26
+text = "«Всё пошло по самому плохому сценарию. Слияние Ари и ИИ обрушило на мир катастрофу: взломы систем, «пробуждённые» заводы и бездушные машины, переписавшие привычный уклад. Город погрузился в хаос, а сам Ари, слившийся с ИИ, стал воплощением этой новой, пугающей силы.»"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = 194.5
+offset_right = 485.0
+offset_bottom = 311.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_x0bj8")
+theme_override_colors/default_color = Color(0.166873, 0.126892, 0.0483007, 1)
+theme_override_font_sizes/normal_font_size = 26
+text = "«Ари больше не тот. Когда Бен и Сай попытались остановить его, он объявил их врагами. Город погрузился в холод машин — улицы пусты, повсюду патрули, а люди прячутся в тени.»"
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = 194.5
+offset_right = 485.0
+offset_bottom = 311.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_x0bj8")
+theme_override_colors/default_color = Color(0.166873, 0.126892, 0.0483007, 1)
+theme_override_font_sizes/normal_font_size = 26
+text = "«Когда-то они были неразлучны. Но теперь Ари, одержимый ИИ, предал друзей: Бен заперт в мёртвой лаборатории, а Сай исчез — говорят, над ним ставят ужасающие опыты…»"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scale = Vector2(0.7, 0.7)
@@ -106,23 +231,58 @@ transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
 script = ExtResource("1_x0bj8")
 sensitivity = 0.02
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Scene1Tex3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 visible = false
+
+[node name="Scene1Tex1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(716.764, 488.571)
-texture = ExtResource("3_x0bj8")
+texture = ExtResource("1_vwnfm")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 
 [node name="Scene1Tex2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-visible = false
 position = Vector2(716.764, 488.571)
 texture = ExtResource("2_bf8ha")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Scene1Tex1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 visible = false
+
+[node name="Scene1Tex3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(716.764, 488.571)
-texture = ExtResource("1_vwnfm")
+texture = ExtResource("3_x0bj8")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Scene1Tex3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(716.764, 488.571)
+texture = ExtResource("9_wq7ad")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Scene1Tex3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(716.764, 488.571)
+texture = ExtResource("10_73eyk")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Scene1Tex3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(716.764, 488.571)
+texture = ExtResource("11_us0t1")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Scene1Tex3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2(716.764, 488.571)
+texture = ExtResource("12_kgg0g")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Scene1Tex3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
+position = Vector2(716.764, 488.571)
+texture = ExtResource("13_us0t1")

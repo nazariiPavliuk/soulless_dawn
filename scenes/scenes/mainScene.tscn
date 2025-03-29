@@ -285,7 +285,7 @@ scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_1f6eh")
 animation = &"mouse_run"
 autoplay = "mouse_run"
-frame_progress = 0.475143
+frame_progress = 0.0205903
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(1.05, 1.05)
