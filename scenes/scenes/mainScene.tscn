@@ -1,0 +1,334 @@
+[gd_scene load_steps=26 format=3 uid="uid://yaf6ax3ajedf"]
+
+[ext_resource type="Texture2D" uid="uid://cjn65tx86txtv" path="res://assets/textures/ui/mainScene/mainSceneBackground.png" id="1_gxlkk"]
+[ext_resource type="Texture2D" uid="uid://bn46ynoqd7u1q" path="res://assets/textures/ui/common/button3.png" id="2_4lfjw"]
+[ext_resource type="Theme" uid="uid://c5o2cxeytas3f" path="res://assets/thems/default.tres" id="2_18g1e"]
+[ext_resource type="Texture2D" uid="uid://drgyyvfug4qx2" path="res://assets/textures/ui/mainScene/mouse/mouse1.png" id="4_1vorq"]
+[ext_resource type="Texture2D" uid="uid://cat8lpatinfvf" path="res://assets/textures/ui/mainScene/bottle.png" id="4_4hdml"]
+[ext_resource type="Script" uid="uid://bgfr5sflr216j" path="res://scripts/ui/parallax_background.gd" id="4_6x32m"]
+[ext_resource type="Script" uid="uid://djb1lm7j327y3" path="res://scripts/ui/start_button.gd" id="4_8vx8i"]
+[ext_resource type="Texture2D" uid="uid://bbwwmmcl6eh50" path="res://assets/textures/ui/mainScene/mouse/mouse2.png" id="5_6x32m"]
+[ext_resource type="Texture2D" uid="uid://gteiqt7l55u" path="res://assets/textures/ui/mainScene/chair.png" id="5_fuwys"]
+[ext_resource type="PackedScene" uid="uid://comsboykqjwfr" path="res://scenes/scenes/prolog.tscn" id="5_x3woq"]
+[ext_resource type="Texture2D" uid="uid://eycqn78iuhjs" path="res://assets/textures/ui/mainScene/mouse/mouse3.png" id="6_8vx8i"]
+[ext_resource type="Texture2D" uid="uid://coxgcqqd6c3nt" path="res://assets/textures/ui/mainScene/bottle2.png" id="6_ys2bp"]
+[ext_resource type="Texture2D" uid="uid://b5akmi0wojpni" path="res://assets/textures/ui/mainScene/bulb.png" id="7_1vorq"]
+[ext_resource type="Texture2D" uid="uid://mywomsx5xl2h" path="res://assets/textures/ui/mainScene/bulb_foreground.png" id="8_6x32m"]
+[ext_resource type="Texture2D" uid="uid://bqc8rya5e8jtg" path="res://assets/textures/ui/mainScene/shoes.png" id="9_8vx8i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3woq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6x32m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8vx8i"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+
+[sub_resource type="Animation" id="Animation_dpbdg"]
+resource_name = "mouse_run"
+length = 23.85
+loop_mode = 1
+step = 0.017
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1.23333, 1.57364, 2.84746, 3.93333, 5.40678, 5.65908, 6.54237, 8.16667, 9.86667, 10.5424, 11.6565, 11.9565, 12.3898, 12.5695, 12.8548, 13.8718, 16.0073, 21.0441, 22.1966),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0.466517, 0.267943, 0.450625, 1, 1, 1.46409, 0.68302),
+"update": 0,
+"values": [Vector2(900, 950), Vector2(1700, 900), Vector2(1700, 900), Vector2(911, 946), Vector2(911, 946), Vector2(53.846, 855.385), Vector2(53.846, 855.385), Vector2(372.308, 1078.46), Vector2(372.308, 1078.46), Vector2(1063.26, 1007.1), Vector2(1095.91, 790.938), Vector2(576.923, 916.923), Vector2(644.615, 753.846), Vector2(843.649, 746.154), Vector2(968.844, 642.255), Vector2(1118.46, 933.846), Vector2(1754.64, 935.495), Vector2(1780, 936.091), Vector2(1780, 936.091), Vector2(900, 950)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2, 5.46667, 10.4576, 11.6232, 13.8548, 22.3322),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/AnimatedSprite2D:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8.26667, 10.5085, 11.5356, 16.3492),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/AnimatedSprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 11.6565, 11.7898, 11.9898, 12.0898),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -1.35787, -1.3436, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/AnimatedSprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 12.2898, 12.4232, 12.5898, 12.6565, 12.7565, 12.8379, 12.8887, 13.0582, 22.0441, 22.2295),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.35, 0.35), Vector2(0.35, 0.35), Vector2(0.25, 0.4), Vector2(0.300653, 0.369739), Vector2(0.35, 0.35), Vector2(0.35, 0.35), Vector2(0.35, 0.35), Vector2(0.4, 0.3), Vector2(0.35, 0.35), Vector2(0.35, 0.35), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j5ruh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(905, 969)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/AnimatedSprite2D:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/AnimatedSprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/AnimatedSprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.35, 0.35)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_atnqp"]
+_data = {
+&"RESET": SubResource("Animation_j5ruh"),
+&"mouse_run": SubResource("Animation_dpbdg")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1f6eh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1vorq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6x32m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8vx8i")
+}],
+"loop": true,
+"name": &"mouse_run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_x3woq"]
+resource_name = "bulb_light"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulbForeground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.430702, 0.566667, 0.666667, 0.733333, 0.933333, 1.23333, 1.80745, 1.94342, 2.04342, 2.11008, 2.31008, 2.61008, 3.66443, 3.80039, 3.90039, 3.96706, 4.16706, 4.46706, 6.73462, 6.87058, 6.97058, 7.03725, 7.23725, 7.53725, 9.01251, 9.14847, 9.24847, 9.31514, 9.51514, 9.81514),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_6kluq"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dpbdg"]
+_data = {
+&"RESET": SubResource("Animation_6kluq"),
+&"bulb_light": SubResource("Animation_x3woq")
+}
+
+[node name="MainScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 27.5551
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gxlkk")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -149.5
+offset_right = 244.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_18g1e")
+theme_override_colors/font_hover_pressed_color = Color(0.373178, 0.250454, 0.0321687, 1)
+theme_override_colors/font_hover_color = Color(0.372549, 0.25098, 0.0313726, 1)
+theme_override_colors/font_color = Color(0.257915, 0.172385, 0.0277176, 1)
+theme_override_colors/font_focus_color = Color(0.45098, 0.305882, 0.0470588, 1)
+theme_override_colors/font_pressed_color = Color(0.34902, 0.486275, 0.431373, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x3woq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6x32m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8vx8i")
+text = "PLAY"
+icon = ExtResource("2_4lfjw")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_8vx8i")
+target_scene = ExtResource("5_x3woq")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(0, 45.195)
+scale = Vector2(0.65, 0.65)
+transform = Transform2D(0.65, 0, 0, 0.65, 0, 45.195)
+script = ExtResource("4_6x32m")
+sensitivity = 0.01
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="MainSceneBackground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2(781.538, 447.692)
+scale = Vector2(1.16162, 1.16162)
+texture = ExtResource("1_gxlkk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer1"]
+libraries = {
+&"": SubResource("AnimationLibrary_atnqp")
+}
+autoplay = "mouse_run"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer1/AnimationPlayer"]
+position = Vector2(905, 969)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_1f6eh")
+animation = &"mouse_run"
+autoplay = "mouse_run"
+frame_progress = 0.599495
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.05, 1.05)
+
+[node name="Bottle" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1596, 899)
+texture = ExtResource("4_4hdml")
+
+[node name="Bottle2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(44, 877)
+texture = ExtResource("6_ys2bp")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.1, 1.1)
+
+[node name="Chair" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(809, 820)
+texture = ExtResource("5_fuwys")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer5"]
+libraries = {
+&"": SubResource("AnimationLibrary_dpbdg")
+}
+autoplay = "bulb_light"
+
+[node name="Bulb" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(925, 67)
+texture = ExtResource("7_1vorq")
+offset = Vector2(0, -50)
+
+[node name="BulbForeground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+visible = false
+position = Vector2(925, 177)
+texture = ExtResource("8_6x32m")
+offset = Vector2(0, -50)
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.2, 1.2)
+
+[node name="Shoes" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(380, 1002.78)
+texture = ExtResource("9_8vx8i")
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control/Button" method="_on_start_pressed"]
