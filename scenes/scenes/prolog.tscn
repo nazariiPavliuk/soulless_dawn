@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
 
 [sub_resource type="Resource" id="Resource_us0t1"]
 script = ExtResource("2_upguw")
-nodes = Array[NodePath]([NodePath("ParallaxBackground/ParallaxLayer5")])
+nodes = Array[NodePath]([NodePath("ParallaxBackground/ParallaxLayer5"), NodePath("CanvasLayer/Control/RichTextLabel5")])
 metadata/_custom_type_script = "uid://dvts0pvw5cpyx"
 
 [sub_resource type="Resource" id="Resource_ocrga"]

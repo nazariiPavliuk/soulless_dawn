@@ -1,34 +1,95 @@
-[gd_scene load_steps=8 format=3 uid="uid://6hnu6o3q3awa"]
+[gd_scene load_steps=20 format=3 uid="uid://6hnu6o3q3awa"]
 
-[ext_resource type="Texture2D" uid="uid://d185dtdeclf5q" path="res://icon.svg" id="1_o8158"]
-[ext_resource type="Texture2D" uid="uid://dtnotgsmhxt4p" path="res://assets/textures/characters/frame_1.png" id="2_p7aad"]
-[ext_resource type="Texture2D" uid="uid://ct80wrc3pgm7r" path="res://assets/textures/characters/frame_2.png" id="3_0ntwy"]
-[ext_resource type="Texture2D" uid="uid://dinxyduipq4cy" path="res://assets/textures/characters/frame_3.png" id="4_7hbgd"]
-[ext_resource type="Texture2D" uid="uid://br1j4fi4x75g3" path="res://assets/textures/characters/frame_4.png" id="5_6tfbh"]
-[ext_resource type="Texture2D" uid="uid://dxn4t40vhsju8" path="res://assets/textures/characters/frame_5.png" id="6_jvrcg"]
+[ext_resource type="Texture2D" uid="uid://vyal8fiki6i7" path="res://assets/textures/characters2/ben_run_atlas.png" id="2_6tfbh"]
+[ext_resource type="Texture2D" uid="uid://rxa2c1un8r4b" path="res://assets/textures/ui/common/progressBarBackground.png" id="2_7hbgd"]
+[ext_resource type="Texture2D" uid="uid://cymtibdi66706" path="res://assets/textures/ui/common/progressBar.png" id="3_6tfbh"]
+[ext_resource type="Texture2D" uid="uid://bss16aym4tl12" path="res://assets/textures/idle/idle1.png" id="3_jvrcg"]
+[ext_resource type="Texture2D" uid="uid://bpchhdfvmefod" path="res://assets/textures/idle/idle2.png" id="4_d8dyr"]
+[ext_resource type="Texture2D" uid="uid://cdrumldoeimhm" path="res://assets/textures/ui/common/progressBarForeground.png" id="4_jvrcg"]
+[ext_resource type="Script" uid="uid://cuvvclsxr50vv" path="res://scripts/logic/player.gd" id="8_d8dyr"]
+[ext_resource type="Texture2D" uid="uid://c1m3jyt8u1j64" path="res://assets/textures/mainGame/location1.png" id="9_6tfbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lus0h"]
+atlas = ExtResource("2_6tfbh")
+region = Rect2(0, 0, 452, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kuhn"]
+atlas = ExtResource("2_6tfbh")
+region = Rect2(452, 0, 452, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdssh"]
+atlas = ExtResource("2_6tfbh")
+region = Rect2(904, 0, 452, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt5l5"]
+atlas = ExtResource("2_6tfbh")
+region = Rect2(1356, 0, 452, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_688a2"]
+atlas = ExtResource("2_6tfbh")
+region = Rect2(1808, 0, 452, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ntvi"]
+atlas = ExtResource("2_6tfbh")
+region = Rect2(2260, 0, 452, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr8mb"]
+atlas = ExtResource("2_6tfbh")
+region = Rect2(2712, 0, 452, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stk13"]
+atlas = ExtResource("2_6tfbh")
+region = Rect2(3164, 0, 452, 502)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d8dyr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_p7aad")
+"texture": ExtResource("3_jvrcg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_0ntwy")
+"texture": ExtResource("4_d8dyr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lus0h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_7hbgd")
+"texture": SubResource("AtlasTexture_5kuhn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_6tfbh")
+"texture": SubResource("AtlasTexture_rdssh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_jvrcg")
+"texture": SubResource("AtlasTexture_dt5l5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_688a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ntvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr8mb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stk13")
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 8.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lus0h"]
+radius = 79.0
+height = 458.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hbgd"]
+size = Vector2(3196.66, 131.5)
 
 [node name="Game" type="Node2D"]
 
@@ -36,20 +97,103 @@ animations = [{
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 415.0
-offset_top = 263.0
-offset_right = 543.0
-offset_bottom = 391.0
-texture = ExtResource("1_o8158")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -499.0
+offset_top = -330.5
+offset_right = 206.0
+offset_bottom = -210.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+max_value = 20.0
+value = 20.0
+stretch_margin_left = 325
+stretch_margin_right = 555
+texture_under = ExtResource("2_7hbgd")
+texture_over = ExtResource("3_6tfbh")
+texture_progress = ExtResource("4_jvrcg")
+texture_progress_offset = Vector2(30, 10)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(483, 303)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(3791, 340)
 sprite_frames = SubResource("SpriteFrames_d8dyr")
-animation = &"run"
-frame_progress = 0.476335
+animation = &"idle"
+frame_progress = 0.135531
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(82, 311)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("8_d8dyr")
+speed = 250.0
+vertical_scale_factor = 0.0007
+stuck_threshold = 100.0
+health_bar = NodePath("../CanvasLayer/Control/TextureProgressBar")
+animated_sprite = NodePath("AnimatedSprite2D")
+feet_marker = NodePath("Marker2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(150, 223)
+sprite_frames = SubResource("SpriteFrames_d8dyr")
+animation = &"idle"
+frame_progress = 0.413615
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(156, 221)
+shape = SubResource("CapsuleShape2D_lus0h")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(155, 93.75)
+scale = Vector2(1.25, 1.25)
+limit_left = -1000
+limit_top = -50
+limit_right = 2000
+limit_bottom = 750
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(158.75, 165)
+gizmo_extents = 47.3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(599, 785)
+shape = SubResource("RectangleShape2D_7hbgd")
+
+[node name="Location1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(482, 329)
+scale = Vector2(0.771484, 0.771484)
+texture = ExtResource("9_6tfbh")
+
+[node name="Location2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1666, 329)
+scale = Vector2(0.771484, 0.771484)
+texture = ExtResource("9_6tfbh")
+
+[node name="Location3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-699, 329)
+scale = Vector2(0.771484, 0.771484)
+texture = ExtResource("9_6tfbh")
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(-79, 724)
+scale = Vector2(0.8, 0.8)
+gizmo_extents = 47.3
